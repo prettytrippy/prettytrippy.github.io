@@ -4,15 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,700&display=swap">
+
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Open Sans', sans-serif;
+            line-height: 1.6;
             margin: 0;
             padding: 0;
             background-color: #f5f5f5;
         }
         header {
-            background-color: #333;
+            background-color: #86b1de;
             color: #fff;
             text-align: center;
             padding: 1em 0;
@@ -23,45 +26,70 @@
             padding: 2em;
             background-color: #fff;
             box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
         }
         h1 {
-            color: #333;
+            color: #000;
+            margin-top: 0;
+        }
+        h2, h3 {
+            color: #000;
+            margin-top: 0;
         }
         p {
             color: #666;
+            margin-bottom: 1em;
+        }
+        a {
+            color: #007bff;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        a:hover {
+            color: #0056b3;
         }
     </style>
+
 </head>
 <body>
     <header>
         <h1>About</h1>
     </header>
     <div class="container">
-        <h2>Introduction</h2>
-        <p>Hello! I'm Tripp Dow, a junior computer science student at the University of Minnesota.</p>
-        <p></p>
-
-        <h2>Education</h2>
-        <p>I am currently pursuing a Bachelor's degree in Computer Science at the University of Minnesota, along with minors in mathematics and philosophy.</p>
-        
-        <h2>Skills</h2>
-        <ul>
-            <li>Programming Languages: Python, C, C#, Java</li>
-            <li>Frameworks: Flask, Unity</li>
-            <li>ML and AI: Pytorch, Tensorflow, Scikit Learn</li>
-            <li>Tools: Github, LaTeX, Bash</li>
-        </ul>
+        <h2>About</h2>
+        <p>
+            Hello! I'm Tripp Dow, a rising third-year undergraduate at the University of Minnesota.
+            I study computer science, with particular interests in machine learning, computational metaresearch, and medical software.<br><br>
+            This fall, I'm excited to begin working with <a href="https://dykang.github.io/">Dongyeop Kang</a> and <a href="https://anmartin94.github.io/">Anna Martin-Boyle</a>, on NLP applications for academic writing.
+        </p>
         
         <h2>Projects</h2>
-        <p>During my studies, I have worked on various projects including:</p>
-        <ul>
-            <li>Identifying Worldwide Astronomers from Scientific Literature</li>
-            <li>Language and Food</li>
-        </ul>
+        <p>Through the course of my studies, I've participated in various projects, related to computation, langauge, and health.</p>
+            <h3>Identifying Worldwide Astrophysicists from Scientific Literature (May 2023 - Present)</h3>
+            <p>
+                During my time as an undergraduate research assistant at Michigan State University, 
+                I joined the <a href="https://deepthought-initiative.github.io/">DeepThought Initiative</a>, to develop author name disambiguation algorithms.
+                Our current approach leverages coauthorship information to train a random forest model on graphical and string-based attributes,
+                and yields a low contamination rate, even with sparse training data. 
+                As we continue to move forward, we will apply this model to publication data in astrophysics, 
+                in order to improve peer review, connect authors, and decrease unfairness in the academic literature.
+            </p>
+            <h3>BreathMetrics (June 2022 - August 2022)</h3>
+            <p>
+                Before my sophomore year, I worked as a software engineering intern at <a href="https://www.area10labs.com/">Area 10 Labs</a>, designing an application for the analysis, capture, and storage of respiratory data.
+                I used the Unity framework to develop a GUI, used methods from machine learning and signal processing to analyze time-series data, and implemented spirometer calibration algorithms from medical literature.
+            </p>
+            <h3>Language and Food (January 2022 - May 2022)</h3>
+            <p>
+                As part of the DFRACS scholarship program, I assisted a linguistics professor with her research, in the fields of conversation analysis and pragmatics.
+                I transcribed audio from study recordings, and formatted the speech data according to standards created by my mentor.
+                For our analysis, we focused on group imagination and modality, argumentation and evidential statements, and humor. 
+            </p>
+            
         
         <h2>Contact</h2>
-        <p>If you would like to get in touch with me, you can reach me at: <a href="mailto:trippdow@gmail.com">trippdow@gmail.com</a></p>
+        <p>I check my school email most often, you can reach it here: <a href="mailto:dow00019@umn.edu">dow00019@umn.edu</a></p>
+        <p>You can reach my personal email here: <a href="mailto:trippdow@gmail.com">trippdow@gmail.com</a></p>
     </div>
 </body>
 </html>
-
