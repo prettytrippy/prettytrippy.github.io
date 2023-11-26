@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,700&display=swap">
+
+    <style>
+        body {
+            font-family: 'Open Sans', sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+        }
+        header {
+            background-color: #3498db; /* Updated color */
+            color: #fff;
+            text-align: center;
+            padding: 1em 0;
+        }
+        nav {
+            background-color: #2c3e50; /* Updated color */
+            display: flex;
+            justify-content: center;
+            padding: 1em 0;
+        }
+        nav a {
+            text-decoration: none;
+            padding: 10px;
+            color: #ecf0f1;
+            margin: 0 10px;
+            transition: color 0.3s;
+        }
+        nav a:hover {
+            color: #3498db;
+        }
+        .container {
+            max-width: 800px;
+            margin: 20px auto; /* Added margin for better spacing */
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1); /* Increased box-shadow for depth */
+            border-radius: 10px;
+        }
+        h1, h2, h3, h4 {
+            color: #333; /* Updated color */
+            margin-top: 0.5em; /* Adjusted top margin for headings */
+        }
+        p {
+            color: #666;
+            margin-bottom: 1.2em; /* Adjusted margin for better spacing */
+        }
+        a {
+            color: #3498db; /* Updated link color */
+            transition: color 0.3s;
+        }
+        a:hover {
+            color: #2980b9; /* Darker hover color for links */
+        }
+        /* Style for the lists */
+        ul {
+            list-style-type: none;
+            padding: 0;
+            margin-left: 1em; /* Adjusted margin for better alignment */
+        }
+        ul li {
+            margin-bottom: 0.5em;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Projects</h1>
+    </header>
+    <nav>
+        <a href="index.html">About</a> 
+        <a href="projects.html">Projects</a> 
+        <a href="contact.html">Contact</a> 
+        <a href="links.html">Links</a>
+    </nav>
+      
+    <div class="container">
+        <h2>Projects</h2>
+        <p>
+            I've divided my past projects into a few main categories, for the sake of simplicity. 
+            Within each division, projects are listed chronologically, with newest at the top.
+        </p>
+        <h3>Computational Medicine</h3>
+        <ul>
+            <li>
+                <h4>Calibration Transformer</h4>
+                <i>Affiliation: <a href="https://emercent.com/">Emercent Technologies</a></i>
+                <p>
+                    Spirometers collect information about the amount of air a subject is able to exhale and inhale over time.
+                    However, the values they pick up are not quite right, for various physical reasons.
+                    To calibrate a spirometer, it is necessary to find its conductance array,
+                    a list of co-efficients that will correctly map observed values to real values.
+                    This calibration is tricky, with many approaches requiring large amounts of data and computation.
+                    During my time at Emercent, I created a transformer model and dataset for calibrating spirometric data.
+                    The model architecture was custom made; 
+                    calculating loss required some extra steps, 
+                    since we do not have ground truth answers, 
+                    but only known properties of an answer. 
+                    I began training the model shortly before returning to school, 
+                    so it is still a work in progress.
+                </p>
+            </li>
+            <li>
+                <h4>BreathMetrics</h4>
+                <i>Affiliation: <a href="https://area10labs.com/">Area 10 Labs</a></i>
+                <p>
+                    I assisted in the development of a mobile application for spirometer analysis.
+                    The app was developed using the Unity framework,
+                    and was able to read in time-series respiratory data,
+                    use techniques from digital signal processing to glean useful information from the data,
+                    and create comprehensible graphics for a user. 
+                    This data was stored as a user history, 
+                    from which a user was able to visualize changes in various attributes (like <a href="https://en.wikipedia.org/wiki/Lung_volumes">FIV</a> or <a href="https://en.wikipedia.org/wiki/Peak_expiratory_flow">PEF</a>) over time.
+                    I also worked with respiratory scientists at <a href="https://www.mayo.edu/research/labs/human-integrative-environmental-physiology/contact">Mayo Clinic</a> to create algorithms for spirometric calibration and visualization.
+                    In addition to this application, I created mathematical models of human respiration to test our approach, 
+                    and assisted with the fabrication and soldering of medical hardware.
+                </p>
+            </li>
+        </ul>
+        <h3>Computational Meta-Research</h3>
+        <ul>
+            <li>
+                <h4>Multi-Modal Summaries of Academic Writing</h4>
+                <i>Affiliation: <a href="https://minnesotanlp.github.io">Minnesota NLP Group</a></i>
+                <p>
+                    In order to make academic research more publically accessible, 
+                    and help researchers keep up with the rapid pace of publication, 
+                    I've created a pipeline of machine learning models, 
+                    capable of transforming research papers into brief and digestible short-form videos.
+                    <br><br>Hopefully, a link to the project will be available here in the near future.
+                </p>
+            </li>
+            <li>
+                <h4>Graphical Methods for Author Name Disambiguation</h4>
+                <i>Affiliation: <a href="https://deepthought-initiative.github.io/">MSU DeepThought Initiative</a></i>
+                <p>
+                    Given a large enough sample of academic publications, 
+                    there are bound to be authors with the same name, 
+                    or at least the same first initial and last name (as per academic convention).
+                    Worse still, a single academic might use a nickname, change their first name, get married, or go by multiple names for some other reason.
+                    <br>Databases like <a href="https://allenai.org/data/s2orc">S2ORC</a> and the <a href="https://ui.adsabs.harvard.edu/">NASA ADS</a> contain sparse metadata about the publications that they index,
+                    with informative attributes like abstracts, keywords, and affiliations often missing or misattributed.
+                    Thus, it is necessary to create an author name disambiguation (AND) system capable of working with few publication attributes.
+                    <br>The system I've devised trains a random forest classifier to disambiguate authors, using graphical information about the co-author network surrounding a given publication, such as branching factor, path length, and connectivity.
+                    Currently, this approach manages extremely high accuracy when validated using labeled <a href="https://orcid.org/">ORCID</a> data, despite using only titles and author names.
+                    <br><br>
+                </p>
+            </li>
+        </ul>
+        <h3>Secondary Fields of Study</h3>
+        <ul>
+            <li>
+                <h4>GMP OEIS</h4>
+                <i>Hobby Project</i>
+                <p>
+                    A C implementation of various integer sequences from the OEIS, 
+                    using the <a href="https://gmplib.org/">GMP</a> arbitrary-precision arithmetic library. Will add a link, as soon as the code isn't embarrassingly buggy.
+                    <!-- Focus is placed on sequences with interesting recurrence relations, 
+                    or sequences with elegant/tricky-to-implement generating functions. 
+                    I'm tired of seeing prime numbers*, and usually skip sequences relating to them.
+                    <br><br>*Translation: I'm bitter that I'm not smart enough to get a GNFS to work.
+                    <br><br>As of 11/25, this is completely broken :(. I will likely fix it over summer or spring break. -->
+                </p>
+            </li>
+            <li>
+                <h4>Ludwig Wittgenstein's Philosophy of Religion</h4>
+                <i>Affiliation: <a href="https://cla.umn.edu/philosophy/undergraduate/real-world-experience/philosophy-undergraduate-journal"><i>Epistemai</i></a></i>
+                <p>
+                    As head staff writer for the UMN Undergraduate Journal of Philosophy, <a href="https://cla.umn.edu/philosophy/undergraduate/real-world-experience/philosophy-undergraduate-journal"><i>Epistemai</i></a>, 
+                    I wrote about Ludwig Wittgenstein's philosophy of religion, 
+                    as expressed in <i>Remarks on Frazer's 'The Golden Bough'</i>. 
+                    I mainly focus on defending Wittgenstein against the critiques leveled at him by John Searle, 
+                    as well as offering an interpretation of his central argument.
+                    This piece was published in the sixth volume of the journal, 
+                    which is free to download <a href="https://conservancy.umn.edu/handle/11299/254918">here</a>.
+                </p>
+            </li>
+        </ul>
+    </div>
+</body>
+</html>
