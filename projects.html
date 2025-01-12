@@ -4,118 +4,85 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Projects</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="styles.css">
 </head>
-<body>
+<body class="dark-mode">
     <header>
         <h1>Projects</h1>
     </header>
     <nav>
-        <a href="index.html">About</a> 
-        <a href="projects.html">Projects</a> 
-        <a href="contact.html">Contact</a> 
-        <a href="links.html">Links</a>
+        <ul>
+            <li><a href="index.html">About</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="links.html">Links</a></li>
+        </ul>
     </nav>
-      
     <main>
-        <h2>Projects</h2>
-        <p>
-            I've divided my past projects into a few main categories, for the sake of simplicity. 
-            Within each division, projects are listed chronologically, with newest at the top.
-        </p>
-        <h3>Computational Medicine</h3>
-        <ul>
-            <li>
-                <h4>Calibration Transformer</h4>
-                <i>Affiliation: <a href="https://emercent.com/">Emercent Technologies</a></i>
+        <section>
+            <h2>Medical Projects</h2>
+            <div class="card">
+                <h3>SayAhh Signal Processing</h3>
                 <p>
-                    Spirometers collect information about the amount of air a subject is able to exhale and inhale over time.
-                    However, the values they pick up are not quite right, for various physical reasons.
-                    To calibrate a spirometer, it is necessary to find its conductance array,
-                    a list of co-efficients that will correctly map observed values to real values.
-                    This calibration is tricky, with many approaches requiring large amounts of data and computation.
-                    During my time at Emercent, I created a transformer model and dataset for calibrating spirometric data.
-                    The model architecture was custom made; 
-                    calculating loss required some extra steps, 
-                    since we do not have ground truth answers, 
-                    but only known properties of an answer. 
-                    I began training the model shortly before returning to school, 
-                    so it is still a work in progress.
+                    I wrote a large amount of signal processing code for <a href="https://www.emercent.com/">Emercent Technologies'</a> SayAhh app, an application that uses sound to measure respiratory and vocal health. 
                 </p>
-            </li>
-            <li>
-                <h4>BreathMetrics</h4>
-                <i>Affiliation: <a href="https://area10labs.com/">Area 10 Labs</a></i>
+                <p>I implemented a variety of speech processing algorithms, such as a Dart version of the <a href="https://pubs.aip.org/asa/jasa/article-abstract/111/4/1917/547221/YIN-a-fundamental-frequency-estimator-for-speech?redirectedFrom=fulltext">YIN algorithm</a> for fundamental frequency estimation.
+                    My algorithms were used to gather a number of other speech biomarkers, such as jitter, shimmer, mel-frequency cepstral coefficients, and some other characteristics we deemed useful.
+                    I also designed a data pipeline to transport this data from a mobile device to a remote server for processing and storage.
+                </p>
+                <a href="https://www.emercent.com/say-ahh/" target="_blank">View Project</a>
+            </div>
+            <div class="card">
+                <h3>Breather Firmware</h3>
                 <p>
-                    I assisted in the development of a mobile application for spirometer analysis.
-                    The app was developed using the Unity framework,
-                    and was able to read in time-series respiratory data,
-                    use techniques from digital signal processing to glean useful information from the data,
-                    and create comprehensible graphics for a user. 
-                    This data was stored as a user history, 
-                    from which a user was able to visualize changes in various attributes (like <a href="https://en.wikipedia.org/wiki/Lung_volumes">FIV</a> or <a href="https://en.wikipedia.org/wiki/Peak_expiratory_flow">PEF</a>) over time.
-                    I also worked with respiratory scientists at <a href="https://www.mayo.edu/research/labs/human-integrative-environmental-physiology/contact">Mayo Clinic</a> to create algorithms for spirometric calibration and visualization.
-                    In addition to this application, I created mathematical models of human respiration to test our approach, 
-                    and assisted with the fabrication and soldering of medical hardware.
+                    I designed a Windows application to set up medical devices on the factory floor. 
+                    This executable is currently being run to download firmware, run tests, create labels, and store logs while manufacturing a new respiratory training device.
                 </p>
-            </li>
-        </ul>
-        <h3>Computational Meta-Research</h3>
-        <ul>
-            <li>
-                <h4>Inclusive Science Project</h4>
-                <i>Affiliation: <a href="https://minnesotanlp.github.io">Minnesota NLP Group</a></i>
+                <a href="https://thebreather.com/" target="_blank">View Project</a>
+            </div>
+            <div class="card">
+                <h3>Binaural Beats Entrainment</h3>
                 <p>
-                    Creating an AI system to improve the accessibility of scientific research.
-                    <br><br>Hopefully, a link to the project will be available here in the near future.
+                    I designed and ran an exploratory study on the use of binaural beats for brain-wave entrainment. 
                 </p>
-            </li>
-            <li>
-                <h4>Graphical Methods for Author Name Disambiguation</h4>
-                <i>Affiliation: <a href="https://deepthought-initiative.github.io/">MSU DeepThought Initiative</a></i>
                 <p>
-                    Given a large enough sample of academic publications, 
-                    there are bound to be authors with the same name, 
-                    or at least the same first initial and last name (as per academic convention).
-                    Worse still, a single academic might use a nickname, change their first name, get married, or go by multiple names for some other reason.
-                    <br>Databases like <a href="https://allenai.org/data/s2orc">S2ORC</a> and the <a href="https://ui.adsabs.harvard.edu/">NASA ADS</a> contain sparse metadata about the publications that they index,
-                    with informative attributes like abstracts, keywords, and affiliations often missing or misattributed.
-                    Thus, it is necessary to create an author name disambiguation (AND) system capable of working with few publication attributes.
-                    <br>The system I've devised trains a random forest classifier to disambiguate authors, using graphical information about the co-author network surrounding a given publication, such as branching factor, path length, and connectivity.
-                    Currently, this approach manages extremely high accuracy when validated using labeled <a href="https://orcid.org/">ORCID</a> data, despite using only titles and author names.
-                    <br><br>
+                    Entrainment happens when interacting oscillatory systems start to synchronize, as destructive interference cancels out their unlike frequency components, leaving the ones they have in common.
+                    Sinces neurons fire in designated frequency bands, it's plausible that low frequency sound waves (like the ones heard in binaural beats) would be able to entrain brain waves into desirable states (relaxed, focused, etc.).
+                    If I could show that this happens, we could create an application to entrain brainwaves, to assist people with sleep, focus, learning, and other cognitive tasks.
                 </p>
-            </li>
-        </ul>
-        <h3>Miscellaneous</h3>
-        <ul>
-            <li>
-                <h4>UnsafetyNet</h4>
-                <i>Hobby Project</i>
+                <p>The system I designed consisted of a wearable rig using the <a href="https://openbci.com/">OpenBCI</a> Ganglion board for EEG data collection, a software module to play binaural beats at target frequencies, and a data processing toolkit to look for evidence of entrainment.
+                    Although the results were negative, I am grateful for this opportunity to conduct research in an industrial setting.
+                </p>
+                <!-- <p>No link for this one, but when I feel like dropping >$500 for a Ganglion, I'll probably do some hobby projects in a similar vein.</p> -->
+            </div>
+            <div class="card">
+                <h3>Calibration Server</h3>
                 <p>
-                    A deep-learning library, written in C. All matrix operations work as fast as possible (besides multiplication, which is currently implemented naively), and have in-place versions when memory is important. No error-checking or logging to fill up your terminal. Check it out <a href="https://github.com/prettytrippy/UnsafetyNet">here.</a> Hopefully, <a href="https://en.wikipedia.org/wiki/Strassen_algorithm">Strassen multiplication</a>, convolutional layers, attention layers, and more activation/loss functions are coming soon.
+                    I created an internal web server for <a href="https://www.emercent.com/">Emercent Technologies</a> to store and process data from spirometers and other proprietary medical devices.
+                    The server stored files in an authenticated MongoDB database.
+                    I also implemented a variety of machine learning algorithms, to compare their effectiveness in calibrating spirometric equipment.
+                    Algorithms included the <a href="https://pubmed.ncbi.nlm.nih.gov/7118642/">Yeh algorithm</a>, a transformer model, and various regression models.
                 </p>
-            </li>
-            <li>
-                <h4>Akashic</h4>
-                <i>Hobby Project</i>
+            </div>
+            <!-- <div class="card">
+                <h3>Project Name</h3>
                 <p>
-                    Retrieval-augmented chatbot that runs on a single laptop. Uses the <a href="https://github.com/abetlen/llama-cpp-python">llama.cpp Python binding</a> + quantized models to reply to user prompts from a web interface. Documents are uploaded to user-defined collections, and the user gets to decide which collections the model sees each prompt. Currently supports both <a href="https://arxiv.org/abs/2212.10496">HyDE</a> and standard dot-product similarity searches. Working on adding query re-writing and some better animations/styling. You can try it <a href="https://github.com/prettytrippy/Akashic">here!</a> Also, <a href="https://huggingface.co/TheBloke">download models</a> and <a href="https://github.com/ggerganov/llama.cpp">llama.cpp</a>.
+                    Description.
                 </p>
-            <li>
-                <h4>Ludwig Wittgenstein's Philosophy of Religion</h4>
-                <i>Affiliation: <a href="https://cla.umn.edu/philosophy/undergraduate/real-world-experience/philosophy-undergraduate-journal"><i>Epistemai</i></a></i>
-                <p>
-                    As head staff writer for the UMN Undergraduate Journal of Philosophy, <a href="https://cla.umn.edu/philosophy/undergraduate/real-world-experience/philosophy-undergraduate-journal"><i>Epistemai</i></a>, 
-                    I wrote about Ludwig Wittgenstein's philosophy of religion, 
-                    as expressed in <i>Remarks on Frazer's 'The Golden Bough'</i>. 
-                    I mainly focus on defending Wittgenstein against the critiques leveled at him by John Searle, 
-                    as well as offering an interpretation of his central argument.
-                    This piece was published in the sixth volume of the journal, 
-                    which is free to download <a href="https://conservancy.umn.edu/handle/11299/254918">here</a>.
-                </p>
-            </li>
-        </ul>
+                <a href="https://website.com/" target="_blank">View Project</a>
+            </div> -->
+        </section>
+        <section>
+            <h2>NLP Projects</h2>
+            
+        </section>
+        <section>
+            <h2>Hobby Projects</h2>
+            
+        </section>
     </main>
+    <footer>
+        <p>&copy; 2025 Tripp Dow. All rights reserved.</p>
+    </footer>
 </body>
 </html>

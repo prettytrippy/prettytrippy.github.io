@@ -3,24 +3,56 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Home</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
-<body>
+<body class="dark-mode">
     <header>
-        <h1>About</h1>
+        <h1>Home</h1>
     </header>
-    <nav>
-        <a href="index.html">About</a> 
-        <a href="projects.html">Projects</a> 
-        <a href="contact.html">Contact</a> 
-        <a href="links.html">Links</a>
+    <nav aria-label="Main navigation">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="links.html">Links</a></li>
+        </ul>
     </nav>
-      
+
     <main>
-        <h2>About</h2>
-        <p>Hello! I'm Tripp Dow, a fourth-year undergraduate at the University of Minnesota...</p>
-        <p>The <b>Links</b> page of this website contains relevant links...</p>
+        <section aria-labelledby="about-section">
+            <h2 id="about-section">About Me</h2>
+            <p>
+                I'm Tripp, a fourth-year undergraduate student at the University of Minnesota, 
+                majoring in Computer Science and minoring in Mathematics and Philosophy.
+            </p>
+            <p>
+                I'm currently doing research on computational electrophysiology with <a href="https://sites.google.com/view/yoga-personal/home">Yogatheesan Varatharajah</a>.
+                Previously, my work has primarily focused on natural language processing or machine learning applications in the medical domain.
+            </p>
+        </section>
+
+        <section aria-labelledby="site-overview">
+            <h2 id="site-overview">About This Website</h2>
+            <p>
+                This website is a portfolio of my work and interests. You can find:
+            </p>
+            <ul>
+                <li>
+                    A <strong>Projects</strong> page showcasing most of my industrial, academic, and hobby projects.
+                </li>
+                <li>
+                    A <strong>Contact</strong> page where you can get in touch with me.
+                </li>
+                <li>
+                    A <strong>Links</strong> page containing relevant links.
+                </li>
+            </ul>
+        </section>
     </main>
+
+    <footer>
+        <p>&copy; 2025 Tripp Dow. All rights reserved.</p>
+    </footer>
 </body>
 </html>
